@@ -1,0 +1,443 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.art-it-standalone {
+  width: 100%;
+  height: 100vh;
+}
+
+.taskbar-app-drawing img {
+  width: 86%;
+  height: 86%;
+  margin: 7%;
+}
+
+.app-window-drawing {
+  background: #202020;
+}
+
+.window-body-drawing {
+  overflow: hidden;
+  background: #202020;
+}
+
+.drawing-app {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: 48px 1fr;
+  background: #202020;
+  color: #f5f5f5;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.drawing-header {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 144px 0 18px;
+  border-bottom: 1px solid #363636;
+  background: #202020;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.drawing-header button {
+  height: 28px;
+  border: 1px solid #4a4a4a;
+  border-radius: 5px;
+  background: #333;
+  color: #f5f5f5;
+  padding: 0 12px;
+  font: 14px "Segoe UI", system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.drawing-header button:first-of-type {
+  margin-left: auto;
+}
+
+.drawing-header button:hover {
+  background: #3d3d3d;
+}
+
+.drawing-start-options {
+  min-height: 0;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+}
+
+.drawing-start-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 280px));
+  gap: 18px;
+}
+
+.drawing-start-cards button {
+  height: 150px;
+  border: 1px solid #444;
+  border-radius: 7px;
+  background: #2b2b2b;
+  color: #f5f5f5;
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  padding: 18px;
+  cursor: pointer;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.drawing-start-cards button:hover,
+.drawing-start-active {
+  border-color: #2563eb;
+  background: rgba(37, 99, 235, 0.22) !important;
+}
+
+.drawing-start-options span {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.drawing-start-options small {
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+.drawing-size-field {
+  display: grid;
+  gap: 7px;
+  color: #d6d6d6;
+  font-size: 15px;
+}
+
+.drawing-size-field select,
+.drawing-dialog input,
+.drawing-dialog select,
+.drawing-file-button {
+  height: 38px;
+  border: 1px solid #4a4a4a;
+  border-radius: 5px;
+  background: #2b2b2b;
+  color: #f5f5f5;
+  padding: 0 10px;
+  font: 16px "Segoe UI", system-ui, sans-serif;
+}
+
+.drawing-file-button {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.drawing-file-button:hover {
+  background: #333;
+}
+
+.drawing-start-button {
+  height: 38px;
+  border: 1px solid #2563eb;
+  border-radius: 5px;
+  background: #2563eb;
+  color: #fff;
+  font: 16px "Segoe UI", system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.drawing-start-button:hover {
+  background: #1d4ed8;
+}
+
+.drawing-workspace {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+
+.drawing-toolbar {
+  min-height: 0;
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  padding: 14px;
+  border-right: 1px solid #363636;
+  background: #191919;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.drawing-tool-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.drawing-tool-group button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background: #f3f4f6;
+  color: #111827;
+  padding: 5px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.drawing-tool-group button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.drawing-tool-group button > span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.drawing-tool-group button:hover,
+.drawing-tool-active {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+  background: #e5e7eb !important;
+}
+
+.drawing-history-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.drawing-history-group button {
+  height: 34px;
+  border: 1px solid #4a4a4a;
+  border-radius: 5px;
+  background: #333;
+  color: #f5f5f5;
+  font: 14px "Segoe UI", system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.drawing-history-group button:hover:not(:disabled) {
+  background: #3d3d3d;
+}
+
+.drawing-history-group button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.drawing-color-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.drawing-color-panel h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.drawing-swatches {
+  display: grid;
+  grid-template-columns: repeat(5, 28px);
+  gap: 8px;
+}
+
+.drawing-swatches button {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.26);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.drawing-swatch-active {
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.44);
+}
+
+.drawing-color-input {
+  width: 100%;
+  height: 38px;
+  border: 1px solid #4a4a4a;
+  border-radius: 5px;
+  background: #2b2b2b;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.drawing-canvas-wrap {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: #111;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.drawing-canvas-stage {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  background: #fff;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.36);
+}
+
+.drawing-canvas-stage-canvas {
+  width: min(100%, calc((100vh - 120px) * 1.579));
+}
+
+.drawing-canvas-stage-pixel {
+  width: min(100%, calc(100vh - 120px));
+}
+
+.drawing-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  background: #fff;
+  touch-action: none;
+}
+
+.drawing-canvas-canvas {
+  aspect-ratio: 1200 / 760;
+}
+
+.drawing-canvas-pixel {
+  aspect-ratio: 1;
+  image-rendering: pixelated;
+}
+
+.drawing-selection {
+  position: absolute;
+  border: 2px dashed #2563eb;
+  background: rgba(37, 99, 235, 0.12);
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.drawing-corner-actions {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 4;
+}
+
+.drawing-corner-actions > button {
+  height: 34px;
+  border: 1px solid #4a4a4a;
+  border-radius: 5px;
+  background: #333;
+  color: #f5f5f5;
+  padding: 0 14px;
+  font: 15px "Segoe UI", system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.drawing-corner-actions > button:hover {
+  background: #3d3d3d;
+}
+
+.drawing-size-menu {
+  position: absolute;
+  right: 0;
+  bottom: 42px;
+  min-width: 150px;
+  padding: 6px;
+  border: 1px solid #3b3b3b;
+  border-radius: 6px;
+  background: #2b2b2b;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+  display: grid;
+  gap: 4px;
+}
+
+.drawing-size-menu button {
+  height: 34px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #f5f5f5;
+  text-align: left;
+  padding: 0 10px;
+  font: 15px "Segoe UI", system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.drawing-size-menu button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.drawing-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200000;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.78);
+}
+
+.drawing-dialog {
+  width: min(320px, calc(100vw - 32px));
+  padding: 20px;
+  border: 1px solid #3b3b3b;
+  border-radius: 8px;
+  background: #202020;
+  color: #f5f5f5;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.58);
+  display: grid;
+  gap: 16px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.drawing-dialog h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.drawing-dialog label {
+  display: grid;
+  gap: 7px;
+  color: #d6d6d6;
+}
+
+.drawing-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.drawing-dialog-actions button {
+  height: 34px;
+  border: 1px solid #4a4a4a;
+  border-radius: 5px;
+  background: #333;
+  color: #f5f5f5;
+  padding: 0 14px;
+  font: 15px "Segoe UI", system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.drawing-dialog-actions button:hover {
+  background: #3d3d3d;
+}
